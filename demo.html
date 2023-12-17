@@ -3,30 +3,48 @@
 <head>
 	<title>Page Title</title>
 	<style>
-    		th {
-        		color: white;
-            		padding: 10px;
-        		}
-       		 a {
-        			text-decoration: none;
-        		}
-        		td {
-        			padding: 10px;
-        		}
+		th {
+			color: white;
+			padding: 10px;
+			text-align: center;
+			background-color: darkblue;
+    	}
 
-		.xhan_pogi:nth-child(1){
-			background-color:darkblue;
-		}
-		.class1:nth-child(1){
-			background-color:red;
-		}
+        th:nth-child(2) {
+            background-color: red;
+            padding: 10px;
+        }
+        th:nth-child(3) {
+            background-color: green;
+            padding: 10px;
+        }
+        th:nth-child(4) {
+            background-color: blue;
+            padding: 10px;
+        }
+        tr:nth-child(2n) td:not(:first-child) {
+            background-color: gray;
+            padding: 10px;
+            text-align: left;
+        }
+        td:nth-child(1) {
+            background-color: white;
+            font-style: italic;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px;
+        }
+
     	</style>
 </head>
 <body>
   	<table>
       		<tr>
-          			<th class="xhan_pogi">Plans/Features</th>
-          			<th class="class1">Basic</th>
+          			<th>Plans/Features</th>
+          			<th>Basic</th>
           			<th>Premium</th>
           			<th>Team</th>
       		</tr>
