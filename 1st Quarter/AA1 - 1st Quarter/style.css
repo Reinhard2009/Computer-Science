@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    /*/text-decoration: none;/*/
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    padding-top: 100px;
+    font-family: sans-serif;
+    font-size: 16px;
+    background-image: url(https://live.staticflickr.com/65535/48746079687_941e93c7ed_h.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  ol {
+    padding-left: 20px;
+    
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+  
