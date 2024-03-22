@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anagram Checker</title>
+    </head>
+    <style>
+        body {
+                background-color: lightseagreen;
+            }
+
+            div {
+                background-color: lightseagreen;
+                width: 300px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+            }
+            button {padding: 10px; background: lightblue }
+
+    </style>
+    <body>
+
+    <h1>Anagram Checker</h1>
+    <p>Enter two words or phrases to see if they are anagrams (same letters rearranged):</p>
+    <input id="word1" type="text" placeholder="Enter first word/phrase: ">
+    <input id="word2" type="text" placeholder="Enter second word/phrase: ">
+    <button onclick="checkAnagram()">Check Anagram</button>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        function checkAnagram() {
+            var word1 = document.getElementById("word1").value.toLowerCase();
+            var word2 = document.getElementById("word2").value.toLowerCase();
+
+            var cleanWord1 = word1.replace(/\s/g, "").replace(/[^a-z]/g, "");
+            var cleanWord2 = word2.replace(/\s/g, "").replace(/[^a-z]/g, "");
+
+            if (cleanWord1.length !== cleanWord2.length) {
+                document.getElementById("result").textContent = "Not an anagram! Words have different lengths.";
+                return;
+            }
+
+            const letterCount1 = {};
+            for (let char of cleanWord1) {
+                letterCount1[char] = (letterCount1[char] || 0) + 1;
+            }
+
+            for (let char of cleanWord2) {
+                if (!letterCount1[char]) {
+                    document.getElementById("result").textContent = "Nope! '" + word1 + "' and '" + word2 + "' are not anagrams.";
+                    return;
+                } 
+            letterCount1[char]--;
+            }
+
+            document.getElementById("result").textContent = "Yes! '" + word1 + "' and '" + word2 + "' are anagrams.";
+        }
+        </script>
+
+    </body>
+</html>
