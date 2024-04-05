@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FA1 - Abasolo</title>
+        <style>
+            table {
+              border-collapse: collapse;
+            }
+            td {
+              border: 1px solid gray;
+              padding: 8px;
+              text-align: center;
+            }
+          </style>
+    </head>
+    <body>
+        <button onclick="genTable()">Generate Table</button>
+        <br><br>
+        <table id="table"></table>
+        <script>
+            var validInt = true
+            function genTable() {
+                while (validInt) {
+                    var n = prompt("Enter the number of rows (2-10): ");
+                    var m = prompt("Enter the number of columns (2-10): ");
+
+                    validInt = !(n >= 2 && n <= 10 && m >= 2 && m <= 10);
+                }
+
+                let table = "";
+
+                for (let i = 1; i <= n; i++) {
+                    table += "<tr>";
+                        for (let j = 1; j <= m; j++) {
+                            table += "<td>" + (i * j) + "</td>";
+                        }
+
+                        table += "</tr>";
+                    }
+
+                    document.getElementById("table").innerHTML = table;
+            }
+
+        </script>
+    </body>
+</html>
